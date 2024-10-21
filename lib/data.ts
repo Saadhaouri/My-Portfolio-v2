@@ -1,6 +1,8 @@
 import React from "react";
 import cryptoImg from "@/public/crypto.webp";
 import resturantImg from "@/public/resturant.webp";
+import portfolioImg from "@/public/portfolio.webp";
+
 import { CgWorkAlt } from "react-icons/cg";
 
 type LinkType =
@@ -54,6 +56,22 @@ export const experiencesData = [
 
 
 export const projectsData = [
+  {
+    title: "My-Portfolio",
+    description:
+      "Modern personal website designed to showcase my skills, projects, and experience in web development. It is built using modern web technologies like Next.js, React, Tailwind CSS, and TypeScript to ensure a responsive and optimized user experience.",
+    tags: ["Typescript","NextJs", "Tailwind CSS"],
+    icons: ["devicon:nextjs","logos:framer","devicon:typescript", "devicon:tailwindcss"],
+    imageUrl: portfolioImg,
+    githubLink: "https://github.com/Mohamed-khaled0/mohamed-khaled-portfolio-v2", 
+    urlLink: "https://mohamed-khaled-frontend-developer.netlify.app/",
+    features: [
+      "Real-time cryptocurrency prices",
+      "Responsive design with Dark/Light mode toggle",
+      "User Authentication using Firebase",
+      "Mobile-friendly navigation with secure routing",
+    ],
+  },
   {
     title: "Crypto",
     description:
