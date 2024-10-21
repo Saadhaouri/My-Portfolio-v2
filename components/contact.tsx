@@ -16,18 +16,9 @@ export default function Contact() {
       id="contact"
       ref={ref}
       className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
+      initial={{ x: -100,  opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+     
     >
       <SectionHeading>Contact me</SectionHeading>
 

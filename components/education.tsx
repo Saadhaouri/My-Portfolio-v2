@@ -15,18 +15,8 @@ export default function Education() {
       id="education"
       ref={ref}
       className="mb-20 sm:mb-28 scroll-mt-28 w-full md:w-[700px] "
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
+      initial={{ x: -100,  opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
     >
       <SectionHeading>My Education</SectionHeading>
 
