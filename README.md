@@ -1,11 +1,11 @@
 # Mohamed Khaled Portfolio
 
-Welcome to the **Mohamed Khaled Portfolio**! This project is a personal website designed to showcase my skills, projects, and experience in web development. It is built using modern web technologies like **Next.js**, **React**, **Tailwind CSS**, and **TypeScript** to ensure a responsive and optimized user experience.
+Welcome to  **Mohamed Khaled Portfolio**! This project is a personal website designed to showcase my skills, projects, and experience in web development. It is built using modern web technologies like **Next.js**, **React**, **Tailwind CSS**, and **TypeScript** to ensure a responsive and optimized user experience.
 
 
 ## 🚀 Live Demo
 
-Check out the live version of the portfolio [here]().
+Check out the live version of the portfolio [here](https://mohamed-khaled-frontend-developer.netlify.app/).
 
 
 
