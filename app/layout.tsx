@@ -5,6 +5,7 @@ import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
+import Footer from "@/components/footer";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -17,7 +18,7 @@ export const metadata = {
   viewport: "width=device-width, initial-scale=1.0",
   robots: "index, follow",
   icons: {
-    icon: "https://cdn-icons-png.flaticon.com/512/10040/10040965.png",
+    icon: "./icon.webp",
   },
 };
 
@@ -38,6 +39,7 @@ export default function RootLayout({
 
             <Toaster position="top-right" />
             <ThemeSwitch />
+            <Footer/>
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>
