@@ -87,11 +87,11 @@ To run this project locally, follow these steps:
 ## 🤝 Contributing
 Contributions are welcome! If you'd like to contribute, feel free to fork the repository and submit a pull request.
 
-Fork the repository
-Create a feature branch (git checkout -b feature/AmazingFeature)
-Commit your changes (git commit -m 'Add some AmazingFeature')
-Push to the branch (git push origin feature/AmazingFeature)
-Open a Pull Request
+- Fork the repository
+- Create a feature branch (git checkout -b feature/AmazingFeature)
+- Commit your changes (git commit -m 'Add some AmazingFeature')
+- Push to the branch (git push origin feature/AmazingFeature)
+- Open a Pull Request
 
 ## 📧 Contact
 Feel free to reach out if you have any questions or suggestions:
