@@ -14,7 +14,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem] mt-[6rem] "
+      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem] mt-[8rem] "
     >
       <div className="flex flex-col items-center justify-center ">
         <div className="relative   ">
