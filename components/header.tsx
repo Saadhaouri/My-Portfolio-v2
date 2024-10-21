@@ -49,6 +49,7 @@ export default function Header() {
               animate={{ y: 0, opacity: 1 }}
               >
                <Link
+              aria-label="name of items in a header"
                 className={clsx(
                   "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-200 text-black ",
                   {

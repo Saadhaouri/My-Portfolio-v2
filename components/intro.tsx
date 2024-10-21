@@ -34,6 +34,7 @@ export default function Intro() {
               height={130}
               src={personalPhoto}
               alt={"Mohamed personal photo"}
+              aria-label='Mohamed personal photo' 
             />
           </motion.div>
         </div>
