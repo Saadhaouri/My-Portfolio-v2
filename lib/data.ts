@@ -1,5 +1,5 @@
 import React from "react";
-import cryptoImg from "@/public/Crypto.webp";
+import cryptoImg from "@/public/crypto.webp";
 import resturantImg from "@/public/resturant.webp";
 import { CgWorkAlt } from "react-icons/cg";
 

@@ -14,7 +14,7 @@ export default function Education() {
     <motion.section
       id="education"
       ref={ref}
-      className="mb-20 sm:mb-28 scroll-mt-28 w-full md:w-[700px]"
+      className="mb-20 sm:mb-28 scroll-mt-28 w-full md:w-[700px] "
       initial={{
         opacity: 0,
       }}
@@ -30,7 +30,7 @@ export default function Education() {
     >
       <SectionHeading>My Education</SectionHeading>
 
-      <div className="mt-4 flex gap-6 border border-black/5 rounded-sm pt-4 pb-7 px-5 md:p-10 bg-gray-100 dark:bg-white/10 ">
+      <div className="mt-4 flex gap-6 border border-black/5 rounded-sm pt-4 pb-7 px-5 md:p-10 bg-gray-100 dark:bg-white/10 mx-6 ">
         <div>
           <Image src={ThebesLogo} alt="Thebes" width="150" style={{borderRadius:'5px'}}/>
         </div>
