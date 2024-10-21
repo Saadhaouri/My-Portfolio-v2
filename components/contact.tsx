@@ -16,15 +16,18 @@ export default function Contact() {
       id="contact"
       ref={ref}
       className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
-      initial={{ x: -100,  opacity: 0 }}
+      initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-     
     >
       <SectionHeading>Contact me</SectionHeading>
 
       <p className="text-gray-700 -mt-6 dark:text-white/80  mx-6">
         Please contact me directly at{" "}
-        <a className="underline" href="mailto:example@gmail.com">
+        <a
+          aria-label="contact"
+          className="underline"
+          href="mailto:example@gmail.com"
+        >
           mohamedalshraby3@gmail.com
         </a>{" "}
         or through this form.

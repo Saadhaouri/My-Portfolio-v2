@@ -62,6 +62,7 @@ export default function Intro() {
           <a
             className="group bg-white px-5 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition border-2 border-white border-opacity-40 cursor-pointer borderBlack dark:bg-white/10"
             href="/CV.pdf"
+            aria-label="cv"
             download
           >
             Resume <HiDownload className="opacity-60  transition" />
@@ -69,6 +70,7 @@ export default function Intro() {
           <a
             className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition cursor-pointer borderBlack text-gray-950"
             href="https://github.com/Mohamed-khaled0"
+            aria-label="github"
             target="_blank"
           >
             GitHub <FaGithub className="opacity-70" />
@@ -78,6 +80,8 @@ export default function Intro() {
             className="group bg-gray-950 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition border-2 border-white border-opacity-40"
             href="https://www.linkedin.com/in/mohamed-khaled3/"
             target="_blank"
+            aria-label="linkedin"
+
           >
             <span className="opacity-70">LinkedIn</span>
             <BsLinkedin className="opacity-70" />

@@ -29,7 +29,7 @@ export default function Education() {
           <p className="text-lg font-medium">
             Bachelor of Computer Science
           </p>
-          <p>Thebes Higher Institute of Information Technology </p>
+          <p >Thebes Higher Institute of Information Technology </p>
           <p className="mt-1">2021 :  2025</p>
           <p className="my-1">GPA 3/4</p>
           <ul className="list-disc pl-6">

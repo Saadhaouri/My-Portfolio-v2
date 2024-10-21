@@ -32,7 +32,7 @@ export default function Header() {
                 animate={{ y: 0, opacity: 1 }}
                 >
                   <button
-                    className="flex items-center justify-center w-full px-3 py-3 dark:text-gray-500 dark:hover:text-gray-300 transition"
+                    className="flex items-center justify-center w-full px-3 py-3 dark:text-gray-300 transition text-black"
                     title="Switch to Deutsch"
                   >
                     <FaGlobe size={16}  />
@@ -50,7 +50,7 @@ export default function Header() {
               >
                <Link
                 className={clsx(
-                  "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-200 dark:hover:text-white",
+                  "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-200 text-black ",
                   {
                     "text-gray-950 dark:white":
                       activeSection === link.name,
