@@ -2,6 +2,9 @@ import React from "react";
 import cryptoImg from "@/public/crypto.webp";
 import resturantImg from "@/public/resturant.webp";
 import portfolioImg from "@/public/portfolio.webp";
+import opticalImg from "@/public/opticalImg.png";
+import parapharmacyImg from "@/public/parapharmacyImg.png";
+import lassriImg from "@/public/lassriImg.png";
 
 import { CgWorkAlt } from "react-icons/cg";
 
@@ -42,70 +45,120 @@ export const links: LinkType[] = [
 
 export const experiencesData = [
   {
-    title: "Web Developer Intern",
-    date: "August 2024 - September 2024",
-    company: "Information Technology Institute ITI",
+    title: "Full Stack Developer",
+    date: "July 2024",
+    company: "Upwork",
     description: [
-      "Developed responsive and dynamic web pages.",
-      "Collaborated with colleagues and mentors as a teamwork.",
-      "Used version control to manage project versions , changes.",
+      "Specialized in building custom applications tailored to client needs.",
+      "Led projects in optical and gym management, addressing technical challenges.",
+      "Delivered efficient, user-friendly solutions focusing on scalable, high-performance systems.",
+      "GitHub repository: [PARA-API](https://github.com/Saadhaouri/PARA-API)",
+    ],
+    icon: React.createElement(CgWorkAlt),
+  },
+  {
+    title: "Frontend Developer",
+    date: "February 2024",
+    company: "VPI INFO SARL",
+    description: [
+      "Worked on developing user interfaces and improving web application performance.",
+      "Collaborated with cross-functional teams to deliver high-quality software solutions.",
+      "Utilized modern frontend technologies to enhance user experience.",
+    ],
+    icon: React.createElement(CgWorkAlt),
+  },
+  {
+    title: "Software Developer Intern",
+    date: "October 2023",
+    company: "Terabyte Software",
+    description: [
+      "Gained hands-on experience in full-stack development with React and TypeScript.",
+      "Worked on database migrations and improved management with SQL Server.",
+      "Contributed to web applications, including HR management systems, enhancing functionality and increasing client satisfaction by 25%.",
+      "Collaborated in an Agile environment to optimize real-time data visualization for key HR metrics.",
     ],
     icon: React.createElement(CgWorkAlt),
   },
 ] as const;
 
-
 export const projectsData = [
   {
-    title: "My-Portfolio",
+    title: "Optical Management System",
     description:
-      "Modern personal website designed to showcase my skills, projects, and experience in web development. It is built using modern web technologies like Next.js, React, Tailwind CSS, and TypeScript to ensure a responsive and optimized user experience.",
-    tags: ["Typescript","NextJs", "Tailwind CSS"],
-    icons: ["devicon:nextjs","logos:framer","devicon:typescript", "devicon:tailwindcss"],
-    imageUrl: portfolioImg,
-    githubLink: "https://github.com/Mohamed-khaled0/mohamed-khaled-portfolio-v2", 
-    urlLink: "https://mohamed-khaled-frontend-developer.netlify.app/",
-    features: [
-      "Real-time cryptocurrency prices",
-      "Responsive design with Dark/Light mode toggle",
-      "User Authentication using Firebase",
-      "Mobile-friendly navigation with secure routing",
-    ],
-  },
-  {
-    title: "Crypto",
-    description:
-      "A modern cryptocurrency tracking app providing real-time cryptocurrency prices, trends, and charts. Users can sign up, manage profiles, and personalize theme preferences.",
-    tags: ["React", "Firebase", "Tailwind CSS"],
-    icons: ["logos:react", "logos:firebase", "devicon:tailwindcss"],
-    imageUrl: cryptoImg,
-    githubLink: "https://github.com/your-crypto-repo", 
-    urlLink: "https://crypto-6f014.web.app/",
-    features: [
-      "Real-time cryptocurrency prices",
-      "Responsive design with Dark/Light mode toggle",
-      "User Authentication using Firebase",
-      "Mobile-friendly navigation with secure routing",
-    ],
-  },
-  {
-    title: "Restaurant Website",
-    description:
-      "A food menu project with filtering options allowing users to sort items by type (burgers, pizza, salads, etc.) and price range. Built with React and Tailwind CSS.",
-    tags: ["React", "JavaScript", "Tailwind CSS", "HTML5"],
+      "An advanced application for managing optician services, including client information, visits, prescriptions, sales, and invoices. Built using React, TypeScript, and .NET to streamline optical management operations.",
+    tags: ["React", "TypeScript", ".NET", "Tailwind CSS"],
     icons: [
       "logos:react",
-      "logos:javascript",
+      "devicon:typescript",
+      "devicon:dotnetcore",
       "devicon:tailwindcss",
-      "logos:html5",
     ],
-    imageUrl: resturantImg,
-    githubLink: "https://github.com/your-restaurant-repo",
-    urlLink: "https://restaurant-app-react-tailwind.netlify.app/",
+    imageUrl: opticalImg, // Replace this with the actual image import
+    githubLink: "https://github.com/Saadhaouri/Optique-APP",
+    urlLink: "https://optical-management-app.netlify.app/",
     features: [
-      "Display top-rated menu items with images and prices",
-      "Filter by food type and price",
-      "Responsive design with hover and scaling effects",
+      "Manage client visits and prescriptions",
+      "Generate PDF invoices",
+      "Real-time tracking of sales and profits",
+      "Responsive dashboard with modern UI",
+    ],
+  },
+  // {
+  //   title: "Transport Management System (TMS)",
+  //   description:
+  //     "A comprehensive system for managing logistics and transportation services. It handles vehicle tracking, driver management, route optimization, and real-time delivery updates.",
+  //   tags: ["C#", "ASP.NET", "React", "SQL Server"],
+  //   icons: [
+  //     "devicon:csharp",
+  //     "devicon:dotnetcore",
+  //     "logos:react",
+  //     "devicon:postgresql",
+  //   ],
+  //   imageUrl: tmsImg, // Replace this with the actual image import
+  //   githubLink: "https://github.com/SaadHoauri/transport-management-system",
+  //   urlLink: "https://tms-demo.netlify.app/",
+  //   features: [
+  //     "Real-time vehicle tracking",
+  //     "Driver management and route optimization",
+  //     "Dynamic delivery status updates",
+  //     "Responsive design with detailed reports",
+  //   ],
+  // },
+  {
+    title: "Parapharmacy Management System",
+    description:
+      "A tailored solution for managing product inventory, sales, and customer orders in a parapharmacy. The application provides real-time stock updates and automated billing features.",
+    tags: ["C#", "ASP.NET", "Tailwind CSS", "React"],
+    icons: [
+      "devicon:csharp",
+      "devicon:dotnetcore",
+      "logos:react",
+      "devicon:tailwindcss",
+    ],
+    imageUrl: parapharmacyImg, // Replace this with the actual image import
+    githubLink: "https://github.com/Saadhaouri/PARA-APP",
+    urlLink: "https://parapharmacy-management-app.netlify.app/",
+    features: [
+      "Real-time inventory management",
+      "Automated billing system",
+      "Customer order tracking",
+      "Responsive UI with data export functionality",
+    ],
+  },
+  {
+    title: "Lassri Sarl Landing Page",
+    description:
+      "A professional landing page for Lassri Sarl, a company specializing in the export and import of fruits and vegetables. The page is designed with a modern, clean layout to highlight the company's services, products, and contact information.",
+    tags: ["HTML", "Tailwind CSS", "JavaScript"],
+    icons: ["logos:html5", "devicon:tailwindcss", "logos:javascript"],
+    imageUrl: lassriImg, // Replace this with the actual image import
+    githubLink: "https://github.com/SaadHoauri/lassri-sarl-landing-page",
+    urlLink: "https://www.lassri-sarl.com/",
+    features: [
+      "Detailed product catalog for fruits and vegetables",
+      "Responsive layout for mobile and desktop",
+      "Contact form integration",
+      "Clean, minimalistic design for easy navigation",
     ],
   },
 ] as const;
@@ -132,6 +185,10 @@ export const skillsData = [
     icon: "logos:javascript",
   },
   {
+    name: ". NET ",
+    icon: "devicon:dotnetcore",
+  },
+  {
     name: "TypeScript",
     icon: "logos:typescript-icon",
   },
@@ -140,9 +197,10 @@ export const skillsData = [
     icon: "logos:react",
   },
   {
-    name: "Redux",
-    icon: "logos:redux",
+    name: "Vue js  ",
+    icon: "logos:vue",
   },
+
   {
     name: "Next.js",
     icon: "logos:nextjs-icon",
@@ -156,8 +214,8 @@ export const skillsData = [
     icon: "logos:github-icon",
   },
   {
-    name: "MongoDB",
-    icon: "logos:mongodb-icon",
+    name: "SqlServer",
+    icon: "devicon:microsoftsqlserver",
   },
   {
     name: "Framer Motion",
@@ -166,5 +224,13 @@ export const skillsData = [
   {
     name: "Postman",
     icon: "logos:postman-icon",
+  },
+  {
+    name: " Photoshop ",
+    icon: "logos:adobe-photoshop",
+  },
+  {
+    name: " Illustrator ",
+    icon: "logos:adobe-illustrator",
   },
 ] as const;

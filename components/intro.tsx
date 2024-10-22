@@ -27,14 +27,14 @@ export default function Intro() {
             }}
           >
             <Image
-              className=" rounded-full object-cover border-[0.10rem] border-white shadow-xl " 
+              className=" rounded-full object-cover border-[0.10rem] border-white shadow-xl "
               priority={true}
               quality={96}
               width={130}
               height={130}
               src={personalPhoto}
-              alt={"Mohamed personal photo"}
-              aria-label='Mohamed personal photo' 
+              alt={"Saad Hoauri personal photo"}
+              aria-label="Saad Hoauri personal photo"
             />
           </motion.div>
         </div>
@@ -44,12 +44,14 @@ export default function Intro() {
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
         >
-<span className="font-bold">Hi, I'm Mohamed Khaled.</span> I'm a{" "}
-<span className="font-bold">frontend developer.</span> I was an intern as a web developer at ITI and am certified by Meta in front-end development. I enjoy building{" "}
-<span className="italic">sites and apps</span> with a focus on{" "}
-<span className="font-bold">TypeScript, Tailwind CSS, and React.js (Next.js)</span>.
-
-
+          <span className="font-bold">Hi, I'm Saad Hoauri.</span> I'm a{" "}
+          <span className="font-bold">full-stack developer.</span> I specialize
+          in <span className="italic">creating modern web applications</span>{" "}
+          with{" "}
+          <span className="font-bold">
+            React, .NET, TypeScript, and Tailwind CSS.
+          </span>{" "}
+          I enjoy building efficient and scalable solutions for web development.
         </motion.h1>
 
         <motion.div
@@ -70,7 +72,7 @@ export default function Intro() {
           </a>
           <a
             className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition cursor-pointer borderBlack text-gray-950"
-            href="https://github.com/Mohamed-khaled0"
+            href="https://github.com/Saadhaouri"
             aria-label="github"
             target="_blank"
           >
@@ -79,10 +81,9 @@ export default function Intro() {
 
           <a
             className="group bg-gray-950 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition border-2 border-white border-opacity-40"
-            href="https://www.linkedin.com/in/mohamed-khaled3/"
+            href="https://www.linkedin.com/in/saad-haouri-b87a89265/"
             target="_blank"
             aria-label="linkedin"
-
           >
             <span className="opacity-70">LinkedIn</span>
             <BsLinkedin className="opacity-70" />

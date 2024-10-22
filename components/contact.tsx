@@ -28,7 +28,7 @@ export default function Contact() {
           className="underline"
           href="mailto:example@gmail.com"
         >
-          mohamedalshraby3@gmail.com
+          saadhaouri@gmail.com
         </a>{" "}
         or through this form.
       </p>

@@ -9,12 +9,13 @@ import Footer from "@/components/footer";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
-
 export const metadata = {
-  title: "Mohamed Khaled | Software Engineer",
-  description: "Hi, I'm Mohamed Khaled, a passionate Software Engineer with expertise in front-end development using Next.js, HTML, and Tailwind CSS. My portfolio showcases my projects, skills, and achievements, designed with modern aesthetics and smooth animations using Framer Motion. Explore my work and get to know me better!",
-  keywords: "Mohamed Khaled, Software Engineer, Frontend Developer, Next.js, HTML, Tailwind CSS, Portfolio, Web Development, Framer Motion, UI/UX",
-  authors:[{ name: "Mohamed Khaled" }] ,
+  title: "Saad Hoauri | Full-Stack Developer",
+  description:
+    "Hi, I'm Saad Hoauri, a passionate Full-Stack Developer with expertise in front-end and back-end development using React, .NET, TypeScript, and Tailwind CSS. My portfolio showcases my projects, skills, and achievements, designed with modern aesthetics and smooth animations. Explore my work and get to know me better!",
+  keywords:
+    "Saad Hoauri, Full-Stack Developer, Frontend Developer, Backend Developer, React, .NET, TypeScript, Tailwind CSS, Portfolio, Web Development, UI/UX",
+  authors: [{ name: "Saad Hoauri" }],
   viewport: "width=device-width, initial-scale=1.0",
   robots: "index, follow",
   icons: {
@@ -39,7 +40,7 @@ export default function RootLayout({
 
             <Toaster position="top-right" />
             <ThemeSwitch />
-            <Footer/>
+            <Footer />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>
