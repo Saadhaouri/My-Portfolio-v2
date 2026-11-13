@@ -8,7 +8,7 @@ import { Icon } from "@iconify/react";
 import { HiArrowRight, HiDownload } from "react-icons/hi";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineMapPin } from "react-icons/hi2";
-import personalPhoto from "@/public/personalphoto.webp";
+import personalPhoto from "@/public/personalphoto.jpg";
 import { profile, stats } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
@@ -131,7 +131,7 @@ export default function Intro() {
                 <HiArrowRight className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Link>
             </motion.div>
-            <motion.a whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }} href={profile.cv} download className="btn-ghost group">
+            <motion.a whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }} href={profile.cv} download="Saad-Haouri-Resume.pdf" className="btn-ghost group">
               Download CV
               <HiDownload className="transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
             </motion.a>
