@@ -1,23 +1,21 @@
-import Contact from "@/components/contact";
-import Education from "@/components/education";
-import Experience from "@/components/experience";
 import Intro from "@/components/intro";
+import About from "@/components/about";
+import Experience from "@/components/experience";
 import Projects from "@/components/projects";
-import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
+import Education from "@/components/education";
+import Contact from "@/components/contact";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center">
+    <main className="overflow-x-clip">
       <Intro />
-      <div className="flex flex-col items-center">
-        <SectionDivider />
-        <Projects />
-        <Skills />
-        <Experience />
-        <Education />
-        <Contact />
-      </div>
+      <About />
+      <Experience />
+      <Projects />
+      <Skills />
+      <Education />
+      <Contact />
     </main>
   );
 }

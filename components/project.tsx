@@ -1,102 +1,128 @@
 "use client";
 
 import { useRef } from "react";
-import Image, { StaticImageData } from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
+import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
+import { Icon } from "@iconify/react";
 import { BiLinkExternal } from "react-icons/bi";
 import { AiFillGithub } from "react-icons/ai";
-import { Icon } from "@iconify/react";
-
-type ProjectProps = {
-  title: string;
-  description: string;
-  tags: readonly string[];
-  icons: readonly string[];
-  imageUrl: StaticImageData;
-  githubLink?: string;
-  urlLink?: string;
-};
+import type { Project as ProjectType } from "@/lib/data";
+import { fadeUp } from "./reveal";
 
 export default function Project({
   title,
+  subtitle,
   description,
   icons,
+  tags,
   imageUrl,
+  placeholderIcon,
   githubLink,
   urlLink,
-}: ProjectProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1.33 1"],
-  });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  className = "",
+}: ProjectType & { className?: string }) {
+  const ref = useRef<HTMLElement>(null);
+  const mx = useMotionValue(-200);
+  const my = useMotionValue(-200);
+  const spotlight = useMotionTemplate`radial-gradient(320px circle at ${mx}px ${my}px, rgba(227,176,75,0.14), transparent 70%)`;
 
   return (
-    <motion.div
+    <motion.article
       ref={ref}
-      style={{
-        scale: scaleProgess,
-        opacity: opacityProgess,
+      variants={fadeUp}
+      whileHover={{ y: -6 }}
+      transition={{ type: "spring", stiffness: 260, damping: 22 }}
+      onMouseMove={(e) => {
+        const r = ref.current?.getBoundingClientRect();
+        if (!r) return;
+        mx.set(e.clientX - r.left);
+        my.set(e.clientY - r.top);
       }}
-      className="group mb-3 sm:mb-8 last:mb-0"
+      onMouseLeave={() => {
+        mx.set(-200);
+        my.set(-200);
+      }}
+      className={`card group relative flex h-full flex-col overflow-hidden ${className}`}
     >
-      <section className="bg-gray-100 max-w-[58rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative lg:min-h-[21rem] hover:bg-gray-200 transition dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
-        <div className="pt-4 pb-7 px-5 md:pl-10 md:pr-2 md:pt-10 lg:max-w-[50%] flex flex-col h-full">
-          <h3 className="text-2xl font-semibold mb-4">{title}</h3>
-          <p className="font-bold text-gray-800 dark:text-white/90 ">Made with:</p>
-          <ul className="flex flex-wrap  gap-2 mb-3 sm:mt-auto">
-            {icons.map((icon, iconIndex) => (
-              <li key={iconIndex}>
-                <Icon icon={icon} className="mr-3 text-2xl  " />
+      <motion.div aria-hidden="true" className="pointer-events-none absolute inset-0 z-10" style={{ background: spotlight }} />
+
+      {/* Visual */}
+      <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-navy-800 via-navy-700 to-navy-900">
+        {imageUrl ? (
+          <Image
+            src={imageUrl}
+            alt={`Screenshot of ${title}`}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+            className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+          />
+        ) : (
+          <div className="absolute inset-0 grid place-items-center">
+            <div aria-hidden="true" className="bg-grid absolute inset-0 opacity-30 [mask-image:radial-gradient(circle,black,transparent_75%)]" />
+            <div className="relative grid h-20 w-20 place-items-center rounded-2xl bg-white/10 text-gold-300 ring-1 ring-white/[0.15] backdrop-blur transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+              <Icon icon={placeholderIcon ?? "ph:code-duotone"} className="text-4xl" aria-hidden="true" />
+            </div>
+          </div>
+        )}
+        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/30 to-transparent" />
+      </div>
+
+      {/* Body */}
+      <div className="flex flex-1 flex-col p-6">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <h3 className="font-display text-lg font-semibold text-navy-900 dark:text-white">{title}</h3>
+            <p className="text-sm font-medium text-gold-500 dark:text-gold-300">{subtitle}</p>
+          </div>
+          <ul className="flex shrink-0 items-center -space-x-1.5" aria-label="Built with">
+            {icons.map((icon) => (
+              <li
+                key={icon}
+                className="grid h-8 w-8 place-items-center rounded-full border border-navy-100 bg-white dark:border-white/10 dark:bg-navy-800"
+              >
+                <Icon icon={icon} className="text-base text-[#714B67] dark:text-[#c79bbd]" aria-hidden="true" />
               </li>
             ))}
           </ul>
-          <p className="mt-2 leading-relaxed text-gray-900 dark:text-white/100 mb-3">
-            {description}
-          </p>
-          <div className="flex">
+        </div>
+
+        <p className="mt-3 flex-1 text-sm leading-relaxed text-navy-600 dark:text-navy-200">{description}</p>
+
+        <div className="mt-4 flex flex-wrap gap-1.5">
+          {tags.map((t) => (
+            <span key={t} className="chip">
+              {t}
+            </span>
+          ))}
+        </div>
+
+        {(urlLink || githubLink) && (
+          <div className="relative z-20 mt-5 flex gap-2 border-t border-navy-100 pt-4 dark:border-white/10">
             {urlLink && (
               <a
                 href={urlLink}
                 target="_blank"
-                rel={`Live demo for ${title}`} 
-                className="flex items-center bg-[#111827] text-white py-2 px-4 mr-2 rounded-full hover:scale-105"
-                aria-label={`Live demo for ${title}`} 
+                rel="noopener noreferrer"
+                aria-label={`Live demo of ${title}`}
+                className="inline-flex items-center gap-1.5 rounded-full bg-navy-800 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-navy-700 dark:bg-gold-400 dark:text-navy-900 dark:hover:bg-gold-300"
               >
-                <BiLinkExternal className="mr-1" /> Live
+                <BiLinkExternal aria-hidden="true" /> Live demo
               </a>
             )}
             {githubLink && (
               <a
                 href={githubLink}
                 target="_blank"
-                rel={`GitHub repository for ${title}`} 
-                className="flex items-center border border-[#111827] py-2 px-4 rounded-full mr-2 text-[#111827] hover:scale-105 dark:border-white dark:text-white dark:border-opacity-40"
-                aria-label={`GitHub repository for ${title}`} 
-                
+                rel="noopener noreferrer"
+                aria-label={`Source code of ${title} on GitHub`}
+                className="inline-flex items-center gap-1.5 rounded-full border border-navy-200 px-4 py-2 text-xs font-semibold text-navy-700 transition-colors hover:border-navy-400 dark:border-white/[0.15] dark:text-navy-100 dark:hover:border-white/40"
               >
-                <AiFillGithub className="mr-1 opacity-70" />
-                <span className="opacity-70">GitHub</span>
+                <AiFillGithub aria-hidden="true" /> Code
               </a>
             )}
           </div>
-        </div>
-
-        {urlLink && (
-          <a href={urlLink} target="_blank" rel="noopener noreferrer">
-            <Image
-            aria-description={`Image for ${title}`}
-            aria-label={`Project image for ${title}`} 
-              src={imageUrl}
-              alt={`Image for ${title}`}
-              quality={95}
-              className="absolute hidden lg:block top-[60px] -right-10 w-[28.25rem] rounded-t-lg shadow-2xl scale-[1.0] transition lg:scale-[1.1] hover:scale-[1.11]"
-            />
-          </a>
         )}
-      </section>
-    </motion.div>
+      </div>
+    </motion.article>
   );
 }
